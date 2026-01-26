@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+api.txt
+db_config.txt
+raw_data/
+*.csv
+*.xlsx
