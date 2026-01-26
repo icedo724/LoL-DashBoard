@@ -52,7 +52,7 @@ LoL-Challenger-Analytics/
 
 #### 저장소 복제
 
-````git clone [Repository URL]````
+````git clone https://github.com/icedo724/LoL-High-Rating-Players-Analytics````
 
 #### 가상 환경 생성
 ````python -m venv .venv````
