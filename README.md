@@ -52,19 +52,29 @@ LoL-Challenger-Analytics/
 
 #### 저장소 복제
 
-````git clone https://github.com/icedo724/LoL-High-Rating-Players-Analytics````
+````
+git clone https://github.com/icedo724/LoL-High-Rating-Players-Analytics
+````
 
 #### 가상 환경 생성
-````python -m venv .venv````
+````
+python -m venv .venv
+````
 
 #### 가상 환경 활성화
-#### Windows:
-````.venv\Scripts\activate````
-#### Mac/Linux:
-````source .venv/bin/activate````
+##### Windows:
+````.
+venv\Scripts\activate
+````
+##### Mac/Linux:
+````
+source .venv/bin/activate
+````
 
 #### 필수 라이브러리 설치
-````pip install -r requirements.txt````
+````
+pip install -r requirements.txt
+````
 
 ### 2. 설정 파일 구성
 프로젝트 최상위 경로에 `default_info` 폴더를 생성하고 다음 두 파일을 추가해야 합니다.
@@ -117,4 +127,6 @@ python 03_analysis/11_timeline_analyze.py
 ### 4단계: 대시보드 실행
 분석된 데이터를 바탕으로 웹 대시보드를 실행합니다.
 
-````streamlit run app/dashboard.py````
+````
+streamlit run app/dashboard.py
+````
