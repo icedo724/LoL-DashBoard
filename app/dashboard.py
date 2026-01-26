@@ -80,9 +80,9 @@ if 'last_pos' not in st.session_state:
 if 'champ_analysis_tab' not in st.session_state:
     st.session_state['champ_analysis_tab'] = "룬 & 스펠"
 
-TIER_FOLDER = 'tier_reports'
-ITEM_FOLDER = 'item_reports'
-ADVANCED_FOLDER = 'advanced_reports'
+TIER_FOLDER = 'reports/tier_reports'
+ITEM_FOLDER = 'reports/item_reports'
+ADVANCED_FOLDER = 'reports/advanced_reports'
 
 BOOTS_LIST = [
     '장화', '약간 신비한 신발', '광전사의 군화', '마법사의 신발', '명석함의 아이오니아 장화',
@@ -130,7 +130,6 @@ def display_stat_insight(result, context="아이템"):
     if not result: return
     with st.expander(f"통계 기반 {context} 비교 리포트", expanded=True):
         p = result['p_value']
-        # [수정] 대괄호 [] 제거하여 볼드체(**)가 정상 작동하도록 수정
         if result['significant']:
             st.success(
                 f"**유의미한 차이 (P={p:.4f})**: **{result['best_name']}** 승률 {result['best_win_rate']:.1f}% > {result['sec_name']}")
@@ -358,7 +357,7 @@ if selected_menu == "챔피언 티어표":
             fig = px.scatter(
                 df, x="pick_rate", y="win_rate", size="visual_size", color="tier",
                 hover_name="챔피언", text="챔피언" if show_names else None,
-                title=f"승률 vs 픽률 ({selected_pos})",
+                title=f"승률 / 픽률 ({selected_pos})",
                 color_discrete_map={"OP": "#EF4444", "1티어": "#F97316", "2티어": "#3B82F6", "3티어": "#10B981",
                                     "4티어": "#6B7280", "5티어": "#9CA3AF", "연구용": "#8B5CF6"},
                 labels={"pick_rate": "픽률 (%)", "win_rate": "승률 (%)", "tier": "티어"}, size_max=15
@@ -669,7 +668,7 @@ elif selected_menu == "챔피언 통합 분석":
             with c2:
                 fig = px.scatter(show_data, x="pick_count", y="win_rate", size="pick_count", color="win_rate",
                                  text="item_name", hover_name="item_name",
-                                 color_continuous_scale="RdYlGn", title="구매 횟수 vs 승률",
+                                 color_continuous_scale="RdYlGn", title="구매 횟수 / 승률",
                                  labels={'pick_count': '구매 횟수', 'win_rate': '승률 (%)', 'item_name': '아이템'})
                 fig.add_hline(y=50, line_dash="dash", line_color="gray")
                 st.plotly_chart(fig, use_container_width=True)
@@ -743,7 +742,7 @@ elif selected_menu == "챔피언 통합 분석":
 
     # --- Tab 5: 상대 전적 ---
     elif current_sub_tab == "상대 전적":
-        st.subheader(f"⚔️ {target_champ}의 상성")
+        st.subheader(f"{target_champ}의 상성")
         my_data = df_counter[(df_counter['position'] == db_pos) & (df_counter['me'] == target_champ)].copy()
         if not my_data.empty:
             c1, c2 = st.columns(2)
