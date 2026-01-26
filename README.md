@@ -106,12 +106,12 @@ python data_processing/05_timeline_upload.py
 ### 3단계: 통계 분석 (CSV 생성)
 DB 데이터를 기반으로 각종 지표를 분석하여 `reports` 폴더에 CSV 파일을 생성합니다.
 ````
-python analysis/06_tier_calc.py
-python analysis/07_item_stats.py
-python analysis/08_champion_stats.py
-python analysis/09_macro_stats.py
-python analysis/10_meta_stats.py
-python analysis/11_timeline_deep.py
+python analysis/06_tier_by_postion.py
+python analysis/07_item_details.py
+python analysis/08_advanced.py
+python analysis/09_champion_macro.py
+python analysis/10_meta_analyze.py
+python analysis/11_timeline_analyze.py
 ````
 
 ### 4단계: 대시보드 실행
