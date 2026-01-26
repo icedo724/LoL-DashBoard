@@ -91,27 +91,27 @@ LoL-Challenger-Analytics/
 랭커 목록을 확보하고 매치 및 타임라인 데이터를 수집합니다.
 
 ````
-python data_collection/01_get_rankers.py
-python data_collection/02_get_match_details.py
-python data_collection/03_get_timeline.py
+python 01_data_collection/01_get_rankers.py
+python 01_data_collection/02_get_match_details.py
+python 01_data_collection/03_get_timeline.py
 ````
 
 ### 2단계: 데이터 전처리 및 DB 적재
 수집된 JSON 데이터를 파싱하여 MySQL 데이터베이스에 저장합니다.
 ````
-python data_processing/04_clean_data.py
-python data_processing/05_timeline_to_db.py
+python 02_data_processing/04_clean_data.py
+python 02_data_processing/05_timeline_to_db.py
 ````
 
 ### 3단계: 통계 분석 (CSV 생성)
 DB 데이터를 기반으로 각종 지표를 분석하여 `reports` 폴더에 CSV 파일을 생성합니다.
 ````
-python analysis/06_tier_by_position.py
-python analysis/07_item_details.py
-python analysis/08_advanced.py
-python analysis/09_champion_macro.py
-python analysis/10_meta_analyze.py
-python analysis/11_timeline_analyze.py
+python 03_analysis/06_tier_by_position.py
+python 03_analysis/07_item_details.py
+python 03_analysis/08_advanced.py
+python 03_analysis/09_champion_macro.py
+python 03_analysis/10_meta_analyze.py
+python 03_analysis/11_timeline_analyze.py
 ````
 
 ### 4단계: 대시보드 실행
