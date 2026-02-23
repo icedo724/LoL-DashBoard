@@ -1,4 +1,4 @@
-# League of Legends High-Rating Players Data Analytics
+
 
 ## 프로젝트 개요
 이 프로젝트는 라이엇 게임즈 API를 활용하여 챌린저, 그랜드마스터, 마스터 등 최상위권 플레이어들의 매치 데이터를 수집합니다. 수집된 데이터를 관계형 데이터베이스(MySQL)로 구축하고, 통계적 기법을 통해 메타를 분석하며, Streamlit 대시보드를 통해 결과를 시각화합니다.
